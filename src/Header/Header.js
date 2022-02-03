@@ -10,66 +10,66 @@ export const Header = () => {
 
   return (
     <div>
-      <header className='header'>
-        <nav className='navbar'>
-          <div className='logo'>
+      <header className="header">
+        <nav className="navbar">
+          <div className="logo">
             <img
-              src='https://w7.pngwing.com/pngs/515/606/png-transparent-life-insurance-higher-education-school-course-company-life-purple-angle-violet.png'
-              alt='Logo'
+              src="https://w7.pngwing.com/pngs/515/606/png-transparent-life-insurance-higher-education-school-course-company-life-purple-angle-violet.png"
+              alt="Logo"
             />
-            <Link to='/'>
-              <p className='logo-txt'>eduKit</p>
+            <Link to="/">
+              <p className="logo-txt">VidyaKit</p>
             </Link>
           </div>
           <ul className={toggle ? "nav-menu" : "nav-menu active"}>
-            <li className='nav-item'>
+            <li className="nav-item">
               <NavLink
-                to='/'
+                to="/"
                 end
                 activeStyle={{
                   color: "var(--dk-pink)",
                 }}
-                className='nav-link'
+                className="nav-link"
               >
                 Home
               </NavLink>
             </li>
-            <li className='nav-item'>
+            <li className="nav-item">
               <NavLink
-                to='/courses'
+                to="/courses"
                 end
                 activeStyle={{
                   color: "var(--dk-pink)",
                 }}
-                className='nav-link'
+                className="nav-link"
               >
                 Courses
               </NavLink>
             </li>
-            <div className='search'>
-              <div className='search-input'>
+            <div className="search">
+              <div className="search-input">
                 <input
-                  type='text'
-                  className='search-txt'
+                  type="text"
+                  className="search-txt"
                   required
                   value={inputSearch}
                   onChange={(e) => setInputSearch(e.target.value)}
-                  placeholder='Search...'
+                  placeholder="Search..."
                 />
                 <button
-                  className='flt-icon'
+                  className="flt-icon"
                   onClick={() => {
                     dispatch({ type: "SEARCH", payload: inputSearch });
                   }}
                 >
                   <span>
-                    <i className='fas fa-lg fa-search'></i>
+                    <i className="fas fa-lg fa-search"></i>
                   </span>
                 </button>
               </div>
               {searchString && (
                 <button
-                  className='btn clr-search'
+                  className="btn clr-search"
                   onClick={() => {
                     setInputSearch("");
                     dispatch({ type: "CLEAR_SEARCH" });
@@ -80,33 +80,33 @@ export const Header = () => {
               )}
             </div>
 
-            <li className='nav-item'>
+            <li className="nav-item">
               <NavLink
-                className='nav-link'
+                className="nav-link"
                 activeStyle={{
                   color: "var(--dk-pink)",
                 }}
-                to='/playlist'
+                to="/playlist"
               >
                 PlayLists
               </NavLink>
             </li>
 
-            <li className='nav-item'>
+            <li className="nav-item">
               <NavLink
-                className='nav-link'
+                className="nav-link"
                 activeStyle={{
                   color: "var(--dk-pink)",
                 }}
-                to='/history'
+                to="/history"
               >
                 History
               </NavLink>
             </li>
-            <li className='nav-item'>
+            <li className="nav-item">
               <NavLink
-                className='nav-link'
-                to='/liked-videos'
+                className="nav-link"
+                to="/liked-videos"
                 activeStyle={{
                   color: "var(--dk-pink)",
                 }}
@@ -115,10 +115,10 @@ export const Header = () => {
               </NavLink>
             </li>
 
-            <li className='nav-item'>
+            <li className="nav-item">
               <NavLink
-                className='nav-link'
-                to='/saved-videos'
+                className="nav-link"
+                to="/saved-videos"
                 activeStyle={{
                   color: "var(--dk-pink)",
                 }}
@@ -126,10 +126,10 @@ export const Header = () => {
                 Watch Later
               </NavLink>
             </li>
-            <li className='nav-item'>
+            <li className="nav-item">
               <NavLink
-                className='nav-link'
-                to='/quizes'
+                className="nav-link"
+                to="/quizes"
                 activeStyle={{
                   color: "var(--dk-pink)",
                 }}
@@ -142,9 +142,9 @@ export const Header = () => {
             onClick={() => setToggle(!toggle)}
             className={toggle ? "hamburger" : "hamburger active"}
           >
-            <span className='bar'></span>
-            <span className='bar'></span>
-            <span className='bar'></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
           </div>
         </nav>
       </header>

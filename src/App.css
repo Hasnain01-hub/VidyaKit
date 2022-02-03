@@ -13,7 +13,7 @@
 
 .btn-top {
   position: fixed;
-  bottom: 4rem;
+  bottom: 2rem;
   right: 2rem;
   cursor: pointer;
 }
@@ -21,4 +21,6 @@
 .avatar-top {
   box-shadow: none;
   background-color: var(--lt-pink);
+  height: 45px;
+  width: 45px;
 }

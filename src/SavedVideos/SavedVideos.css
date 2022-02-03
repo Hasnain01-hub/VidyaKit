@@ -4,6 +4,7 @@
   gap: 2rem;
   align-items: center;
   margin: 2rem;
+  justify-content: center;
 }
 
 .empty-card {
@@ -19,4 +20,8 @@
 
 .mg-1 {
   margin: 1rem 0;
+}
+.show-videos > a {
+  height: 250px;
+  width: 250px;
 }

@@ -37,33 +37,33 @@ export const Video = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className='video-notes'>
-        <div className='video'>
+      <div className="video-notes">
+        <div className="video">
           <iframe
-            width='100%'
-            height='500px'
+            width="100%"
+            height="500px"
             style={{ borderRadius: "0.5rem" }}
             title={video.name}
             src={video.url}
           ></iframe>
         </div>
         {showNote && (
-          <div className='notes'>
+          <div className="notes">
             {editNote ? (
               <textarea
-                className='input-notes'
-                placeholder='Add Notes...also supports markdown!'
+                className="input-notes"
+                placeholder="Add Notes...also supports markdown!"
                 onChange={(e) => setInputText(e.target.value)}
                 value={inputText}
               ></textarea>
             ) : (
-              <div className='display-notes'>
+              <div className="display-notes">
                 <Markdown source={inputText}></Markdown>
               </div>
             )}
-            <div className='video-note-actions'>
+            <div className="video-note-actions">
               <button
-                className='btn pink'
+                className="btn pink"
                 onClick={() => {
                   setEditNote(!editNote);
                   // console.log(likeSaveState.notes);
@@ -96,7 +96,7 @@ export const Video = () => {
               </button>
               {editNote && (
                 <button
-                  className='btn pink'
+                  className="btn pink"
                   onClick={() => setEditNote(!editNote)}
                 >
                   Cancel
@@ -108,12 +108,12 @@ export const Video = () => {
       </div>
       <div className={showNote ? "video-description" : "video-desc-center"}>
         <h3>{video.name}</h3>
-        <div className='video-desc-details'>
+        <div className="video-desc-details">
           <p>Category: {video.category}</p>
           <p>Published Date: {video.date}</p>
         </div>
-        <div className='video-desc-actions'>
-          <label className='choose-playlist'>
+        <div className="video-desc-actions">
+          <label className="choose-playlist">
             Save to Play List:
             <select
               onChange={(e) => {
@@ -138,7 +138,7 @@ export const Video = () => {
             </select>
           </label>
           <button
-            className='btn-card-actions'
+            className="btn-card-actions"
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();
@@ -152,12 +152,12 @@ export const Video = () => {
               }, likeSaveDispatch({ type: "SAVE_VIDEO", payload: video }));
             }}
           >
-            <div className='avatar av-sm av-pink'>
+            <div className="avatar av-sm av-pink">
               <i className={saveUnSave(video)}></i>
             </div>
           </button>
           <button
-            className='btn-card-actions'
+            className="btn-card-actions"
             onClick={() => {
               likeSaveState.likedVideos.reduce((acc, value) => {
                 return value.id === video.id
@@ -169,21 +169,23 @@ export const Video = () => {
               }, likeSaveDispatch({ type: "LIKE_VIDEO", payload: video }));
             }}
           >
-            <div className='avatar av-sm av-pink'>
+            <div className="avatar av-sm av-pink">
               <i className={likeUnLike(video)}></i>
             </div>
           </button>
-          <button
-            className='avatar av-sm av-pink btn'
-            onClick={() => {
-              setShowNote(!showNote);
-            }}
-          >
-            {showNote ? (
-              <i className='far fa-lg fa-sticky-note'></i>
-            ) : (
-              <i className='fas fa-lg fa-sticky-note'></i>
-            )}
+          <button className="btn-card-actions">
+            <button
+              className="avatar av-sm av-pink btn"
+              onClick={() => {
+                setShowNote(!showNote);
+              }}
+            >
+              {showNote ? (
+                <i className="far fa-lg fa-sticky-note"></i>
+              ) : (
+                <i className="fas fa-lg fa-sticky-note"></i>
+              )}
+            </button>
           </button>
         </div>
       </div>
