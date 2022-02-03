@@ -5,12 +5,12 @@ import { Header } from "./Header";
 import { LikedVideos } from "./LikedVideos";
 import { SavedVideos } from "./SavedVideos";
 import { PlayList } from "./Playlist";
-import { Video } from "./Videos";
+import  Video  from "./Videos/Video";
 import { History } from "./History";
 import "./App.css";
 import { Quiz } from "./Quizs/Quiz";
 import { Home } from "./Home/Home";
-import React, { useEffect, lazy, Suspense } from "react";
+import React, { useEffect} from "react";
 import FlutterQuiz from "./Quizs/flutterQuiz";
 import AngularQuiz from "./Quizs/angularQuiz";
 import ReactQuiz from "./Quizs/reactQuiz";
@@ -66,7 +66,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home }></Route>
           <Route exact path="/courses" component={VideoListing }></Route>
-          <Route exact path="courses/video/:videoId" component={<Video />}></Route>
+          <Route exact path="/courses/video/:videoId" component={Video }/>
           <Route exact path="/playlist" component={PlayList }></Route>
           <Route exact path="/quizes" component={Quiz }></Route>
           <Route exact path="/history" component={History }></Route>

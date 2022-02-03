@@ -94,7 +94,7 @@ function Signup(){
               <span className="register">Register</span>
               <div class="underline-title1"></div>
             </div>
-            <form onSubmit={registerWithEmailAndPassword} class="form">
+            <form class="form">
               <label for="user-email" style={{ paddingTop: '13px' }}>
                 &nbsp;Email
               </label>
@@ -112,7 +112,7 @@ function Signup(){
               <div class="form-border"></div>
               
               <div class="form-border"></div>
-              <Button id="submit-btn" onClick={registerWithEmailAndPassword} type="primary" className="mb-3" block shape="round" icon={<SendOutlined />} disabled={!email || password.length < 6} size="large" >
+              <Button id="submit-btn" onClick={registerWithEmailAndPassword} type="primary" className="mb-3" block shape="round" icon={<SendOutlined />} size="large" >
                 &nbsp;Register
               </Button>
               <div>

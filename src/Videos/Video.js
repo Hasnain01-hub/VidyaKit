@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Markdown from "react-remarkable";
 import "./Video.css";
 
-export const Video = () => {
+ const Video = () => {
   const { playListState, playListDispatch } = usePlayList();
   const { likeSaveState, likeSaveDispatch } = useLikeSave();
   const { videoId } = useParams();
@@ -192,3 +192,5 @@ export const Video = () => {
     </motion.div>
   );
 };
+
+export default Video;
