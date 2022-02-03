@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import { VideoListing } from "./VideoListing";
+import { Blogs } from './Blogs';
 import { Header } from "./Header";
 import { LikedVideos } from "./LikedVideos";
 import { SavedVideos } from "./SavedVideos";
@@ -62,8 +64,9 @@ function App() {
       <Header />
       <div className="main">
         <Routes>
-        <Route path='/' element={<Home />}></Route>
+          <Route path='/' element={<Home />}></Route>
           <Route path='/courses' element={<VideoListing />}></Route>
+          <Route path='/blogs' element={<Blogs />}></Route>
           <Route path='courses/video/:videoId' element={<Video />}></Route>
           <Route path='/playlist' element={<PlayList />}></Route>
           <Route path='/quizes' element={<Quiz />}></Route>
@@ -75,8 +78,8 @@ function App() {
           <Route path='quizes/React' element={<ReactQuiz />}></Route>
           <Route path='quizes/Laravel-6' element={<LaravelQuiz />}></Route>
           <Route path='quizes/VueJS' element={<VueQuiz />}></Route>
-          <Route  path="/login-register" element={<Login/>}></Route>
-          <Route  path="/register" element={<Signup/>}></Route>
+          <Route path="/login-register" element={<Login />}></Route>
+          <Route path="/register" element={<Signup />}></Route>
         </Routes>
         <Link to="top" smooth={true} duration={500}>
           <div className="btn-top badge-av">

@@ -1,0 +1,32 @@
+.blogs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 5rem;
+  justify-content: center;
+  margin: 3rem 0;
+  align-items: center;
+}
+
+.card {
+  max-width: 375px;
+  margin: 0;
+  height: auto;
+  max-height: 400px;
+  text-align: left;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  box-shadow: var(--primary-box-shadow);
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+
+.card>p {
+  font-size: 1rem;
+}
+
+
+.thumbnail {
+  width: 100%;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
@@ -32,13 +33,11 @@ export const Home = () => {
               <br />
               Explore series of blogs and articles here!
             </h2>
-            <a
-              href="https://precodes.netlify.app/blogs.html"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/blogs"
             >
               <button className="btn-main btn">Read Now</button>
-            </a>
+            </Link>
           </div>
         )}
         <button
@@ -63,15 +62,13 @@ export const Home = () => {
 
       <h2 className="center-txt">Explore More!!</h2>
       <div className="categories-home">
-        <a
-          href="https://precodes.netlify.app/blogs.html"
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          to="/blogs"
         >
           <div className="card-category cat-img1">
             <h3>View Latest Articles & Blogs</h3>
           </div>
-        </a>
+        </Link>
         <Link to="/courses">
           <div className="card-category cat-img2">
             <h3>View Courses</h3>
@@ -81,32 +78,33 @@ export const Home = () => {
 
       <footer className="main-footer">
         <p>
-          © | 2021 | <span className="pink-txt">VidyaKit</span>
+          © | 2022 | <span className="pink-txt">VidyaKit</span>
         </p>
         <p className="pink-txt">VidyaKit by Dark Coders</p>
 
         <ul className="footer-list">
           <li>
-            <a className="links" href="mailto: prerananw1@gmail.com">
+            <a className="links" target="_blank" href="#">
               <i className="far fa-envelope"></i>
             </a>
           </li>
 
           <li>
-            <a className="links" href="https://github.com/prerana1821">
+            <a className="links" target="_blank" href="#">
               <i className="fab fa-github"></i>
             </a>
           </li>
 
           <li>
-            <a className="links" href="https://twitter.com/precodes18">
+            <a className="links" target="_blank" href="#">
               <i className="fab fa-twitter"></i>
             </a>
           </li>
           <li>
             <a
               className="links"
-              href="https://www.linkedin.com/in/prerana-nawar/"
+              target="_blank"
+              href="#"
             >
               <i className="fab fa-linkedin-in"></i>
             </a>
