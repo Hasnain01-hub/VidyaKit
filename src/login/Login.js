@@ -209,12 +209,16 @@ const Login = () => {
       >
         &nbsp;Login
       </Button>
+      <br />
       <div>
         <span className="sig">Don't have an account? </span> &nbsp;
+        <br />
+        <br />
         <Link to="/register" id="signup">
           Register
         </Link>
       </div>
+      <br />
     </form>
   );
   return (
