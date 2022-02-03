@@ -1,16 +1,16 @@
 import { useDispatch } from "react-redux";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { VideoListing } from "./VideoListing";
 import { Header } from "./Header";
 import { LikedVideos } from "./LikedVideos";
 import { SavedVideos } from "./SavedVideos";
 import { PlayList } from "./Playlist";
-import  Video  from "./Videos/Video";
+import Video from "./Videos/Video";
 import { History } from "./History";
 import "./App.css";
 import { Quiz } from "./Quizs/Quiz";
 import { Home } from "./Home/Home";
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import FlutterQuiz from "./Quizs/flutterQuiz";
 import AngularQuiz from "./Quizs/angularQuiz";
 import ReactQuiz from "./Quizs/reactQuiz";
@@ -19,7 +19,7 @@ import VueQuiz from "./Quizs/vueQuiz";
 import { Link } from "react-scroll";
 import Login from "./login/Login";
 import Signup from "./login/register/Register";
-import { db ,auth} from "./Firebase";
+import { db, auth } from "./Firebase";
 function App() {
   const dispatch = useDispatch();
   var separatedString1;
@@ -27,7 +27,8 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       if (user) {
         const idTokenResult = await user.getIdTokenResult();
-        await db.collection("users")
+        await db
+          .collection("users")
           // .where('uid', '==', user.email)
           .doc(user.email)
           .get()
@@ -38,7 +39,7 @@ function App() {
               //use separatedString1
             }
             dispatch({
-              type: "LOGGED_IN_USER2",
+              type: "LOGGEDIN_USER",
               payload: {
                 name: separatedString1.name,
                 email: separatedString1.email,
@@ -46,14 +47,11 @@ function App() {
                 role: separatedString1.role,
                 id: separatedString1.email,
               },
-
-            })
-          }).catch((error) => {
+            });
+          })
+          .catch((error) => {
             console.log(error);
           });
-
-
-
       }
     });
     return () => unsubscribe();
@@ -63,23 +61,23 @@ function App() {
     <div className="App" id="top">
       <Header />
       <div className="main">
-        <Switch>
-          <Route exact path="/" component={Home }></Route>
-          <Route exact path="/courses" component={VideoListing }></Route>
-          <Route exact path="/courses/video/:videoId" component={Video }/>
-          <Route exact path="/playlist" component={PlayList }></Route>
-          <Route exact path="/quizes" component={Quiz }></Route>
-          <Route exact path="/history" component={History }></Route>
-          <Route exact path="/liked-videos" component={LikedVideos }></Route>
-          <Route exact path="/saved-videos" component={SavedVideos }></Route>
-          <Route exact path="quizes/Flutter" component={FlutterQuiz }></Route>
-          <Route exact path="quizes/AngularJS" component={AngularQuiz }></Route>
-          <Route exact path="quizes/React" component={ReactQuiz }></Route>
-          <Route exact path="/register" component={Signup }></Route>
-          <Route exact path="/login-register" component={Login }></Route>
-          <Route exact path="quizes/Laravel-6" component={LaravelQuiz }></Route>
-          <Route exact path="quizes/VueJS" component={VueQuiz }></Route>
-        </Switch>
+        <Routes>
+        <Route path='/' element={<Home />}></Route>
+          <Route path='/courses' element={<VideoListing />}></Route>
+          <Route path='courses/video/:videoId' element={<Video />}></Route>
+          <Route path='/playlist' element={<PlayList />}></Route>
+          <Route path='/quizes' element={<Quiz />}></Route>
+          <Route path='/history' element={<History />}></Route>
+          <Route path='/liked-videos' element={<LikedVideos />}></Route>
+          <Route path='/saved-videos' element={<SavedVideos />}></Route>
+          <Route path='quizes/Flutter' element={<FlutterQuiz />}></Route>
+          <Route path='quizes/AngularJS' element={<AngularQuiz />}></Route>
+          <Route path='quizes/React' element={<ReactQuiz />}></Route>
+          <Route path='quizes/Laravel-6' element={<LaravelQuiz />}></Route>
+          <Route path='quizes/VueJS' element={<VueQuiz />}></Route>
+          <Route  path="/login-register" element={<Login/>}></Route>
+          <Route  path="/register" element={<Signup/>}></Route>
+        </Routes>
         <Link to="top" smooth={true} duration={500}>
           <div className="btn-top badge-av">
             <div className="avatar avatar-top av-pink">

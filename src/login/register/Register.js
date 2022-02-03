@@ -1,4 +1,4 @@
-import { toast } from 'react-toastify';
+
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 import "../login.css";
 import { Button } from "antd";
 import { SendOutlined } from "@ant-design/icons";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { auth, db } from "../../Firebase";
 
@@ -20,14 +20,14 @@ function Signup() {
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
-  let history = useHistory();
+  let history = useNavigate();
   useEffect(() => {
-    let intended = history.location.state;
+    let intended = history;
     if (intended) {
       return;
     } else {
       if (user && user.token) {
-        history.push("/");
+        history("/");
       }
     }
   }, [user, history]);

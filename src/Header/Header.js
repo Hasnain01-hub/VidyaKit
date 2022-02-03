@@ -1,14 +1,14 @@
 import { useState } from "react";
 import firebase from 'firebase/compat/app';
 import { useData } from "../Context";
-import { NavLink,useHistory, Link } from "react-router-dom";
+import { NavLink,useNavigate, Link } from "react-router-dom";
 import "./Header.css";
 import { useDispatch, useSelector } from 'react-redux';
 
 export const Header = () => {
   const { dispatch, searchString } = useData();
   let dispath = useDispatch();
-  let history = useHistory();
+  let history = useNavigate();
   const [inputSearch, setInputSearch] = useState("");
   const [toggle, setToggle] = useState(true);
   const logout = () => {
@@ -18,7 +18,7 @@ export const Header = () => {
       payload: null,
     });
     alert("Successfully Logout");
-    history.push("/");
+    history("/");
   };
   const { user } = useSelector((state) => ({ ...state }));
   return (

@@ -4,7 +4,7 @@ import firebase from "firebase/compat/app";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "antd";
 import { GoogleOutlined, MailOutlined } from "@ant-design/icons";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { auth, db } from "../Firebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -22,15 +22,15 @@ const Login = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  let history = useHistory();
+  let history = useNavigate();
   const { user } = useSelector((state) => ({ ...state }));
   useEffect(() => {
-    let intended = history.location.state;
+    let intended = history;
     if (intended) {
       return;
     } else {
       if (user && user.token) {
-        history.push("/");
+        history("/");
       }
     }
   }, [user, history]);
