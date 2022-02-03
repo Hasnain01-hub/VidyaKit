@@ -106,7 +106,7 @@ export const Header = () => {
               </NavLink>
             </li>
 
-            <li className="nav-item">
+            {user.role === 'user' &&  <li className="nav-item">
               <NavLink
                 className="nav-link"
                 activeStyle={{
@@ -117,7 +117,8 @@ export const Header = () => {
                 History
               </NavLink>
             </li>
-            <li className="nav-item">
+}
+            {user.role === 'user' && <li className="nav-item">
               <NavLink
                 className="nav-link"
                 to="/liked-videos"
@@ -128,8 +129,9 @@ export const Header = () => {
                 Liked Videos
               </NavLink>
             </li>
+            }
 
-            <li className="nav-item">
+{user.role === 'user' &&   <li className="nav-item">
               <NavLink
                 className="nav-link"
                 to="/saved-videos"
@@ -140,6 +142,7 @@ export const Header = () => {
                 Watch Later
               </NavLink>
             </li>
+}
             {!user && <li className='nav-item'>
               <NavLink
                 className='nav-link'

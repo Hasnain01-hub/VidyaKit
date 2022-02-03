@@ -37,6 +37,7 @@ import "./Video.css";
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+      
       <div className="video-notes">
         <div className="video">
           <iframe
