@@ -1,13 +1,26 @@
 import { useState } from "react";
+import firebase from 'firebase/compat/app';
 import { useData } from "../Context";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink,useHistory, Link } from "react-router-dom";
 import "./Header.css";
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Header = () => {
   const { dispatch, searchString } = useData();
+  let dispath = useDispatch();
+  let history = useHistory();
   const [inputSearch, setInputSearch] = useState("");
   const [toggle, setToggle] = useState(true);
-
+  const logout = () => {
+    firebase.auth().signOut();
+    dispath({
+      type: "LOGOUT_USER",
+      payload: null,
+    });
+    alert("Successfully Logout");
+    history.push("/");
+  };
+  const { user } = useSelector((state) => ({ ...state }));
   return (
     <div>
       <header className='header'>
@@ -126,6 +139,31 @@ export const Header = () => {
                 Watch Later
               </NavLink>
             </li>
+            {!user && <li className='nav-item'>
+              <NavLink
+                className='nav-link'
+                to='/login-register'
+                activeStyle={{
+                  color: "var(--dk-pink)",
+                }}
+              >
+                Login
+              </NavLink>
+            </li>
+            }
+            {user && ( <li className='nav-item' onClick={logout}>
+              <NavLink
+                className='nav-link'
+                to='/login-register'
+                activeStyle={{
+                  color: "var(--dk-pink)",
+                }}
+              >
+                Logout
+              </NavLink>
+            </li>
+            )}
+
             <li className='nav-item'>
               <NavLink
                 className='nav-link'
