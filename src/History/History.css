@@ -3,3 +3,8 @@
   box-shadow: none;
   margin: 1rem 0 0;
 }
+.sec-pink:hover {
+  background-color: var(--dk-pink);
+  color: #fff;
+  transition: 0.2s ease;
+}

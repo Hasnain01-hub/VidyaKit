@@ -13,14 +13,16 @@
 }
 
 .img1 {
-  background: url(../images/img1.gif);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/img1.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .img2 {
-  background: url(../images/img2.gif);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/img2.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -41,6 +43,8 @@
   padding: 0.8rem 1rem;
   color: var(--white-color);
   box-shadow: none;
+  border-radius: 25px;
+  width: 250px;
 }
 
 .main-footer {
@@ -66,12 +70,12 @@
 
 .pink-txt {
   color: var(--dk-pink);
+  text-decoration: none;
 }
 
-.pink-txt:hover {
-  text-decoration: underline;
+.links {
+  font-size: 24px;
 }
-
 .categories-home {
   display: flex;
   margin: 2rem;
@@ -88,7 +92,7 @@
   border-radius: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;     
+  align-items: center;
 }
 
 .home {
@@ -106,18 +110,30 @@
   box-shadow: 9.91px 9.91px 15px #d9dade, -9.91px -9.91px 15px #ffffff;
 }
 
+.cat-img1:hover,
+.cat-img2:hover {
+  transform: scale(1.05);
+  transition: 0.1s ease;
+}
+
 .cat-img1 {
-  background: url(../images/catgy-1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/catgy-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  color: #fff;
+  font-weight: 400;
 }
 
 .cat-img2 {
-  background: url(../images/catgy-2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/catgy-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  color: #fff;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 800px) {
