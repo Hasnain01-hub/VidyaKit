@@ -1,3 +1,3 @@
 ## eduKit
 
-### Wetsite Link: [eduKit](https://edukit.netlify.app/)
+### Wetsite Link: [VidyaKit](https://edukit.netlify.app/)
