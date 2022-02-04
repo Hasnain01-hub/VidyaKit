@@ -167,7 +167,7 @@ export const Header = () => {
                 </NavLink>
               </li>
               }
-              {user && (<li className='nav-item' onClick={logout}>
+              {user && <li className='nav-item' onClick={logout}>
                 <NavLink
                   className='nav-link'
                   to='/login-register'
@@ -178,9 +178,9 @@ export const Header = () => {
                   Logout
                 </NavLink>
               </li>
-              )}
+              }
 
-              <li className='nav-item'>
+{user &&<li className='nav-item'>
                 <li className="nav-item">
                   <NavLink
                     className="nav-link"
@@ -193,6 +193,7 @@ export const Header = () => {
                   </NavLink>
                 </li>
               </li>
+}
             </ul>
             <div
               onClick={() => setToggle(!toggle)}
