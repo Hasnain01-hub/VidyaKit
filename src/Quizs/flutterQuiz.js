@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -138,7 +139,7 @@ export default function FlutterQuiz() {
             </div>
             <div className='score'>
               {score > 3 ? (
-                <a
+                <a target="_blank"
                   href='https://certificate-flutter.omjadhav3714.repl.co/'
                   className='bt'
                 >

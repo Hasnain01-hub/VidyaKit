@@ -110,7 +110,7 @@ const Login = () => {
         });
     } catch (err) {
       console.error(err);
-      alert(err.message);
+      // alert(err.message);
     }
   };
   const signInWithEmailAndPassword = async () => {
@@ -151,7 +151,7 @@ const Login = () => {
       history.push("/");
     } catch (err) {
       console.error(err);
-      alert("could'nt login");
+      // alert("could'nt login");
     }
   };
 

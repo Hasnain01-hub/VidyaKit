@@ -36,7 +36,6 @@ function Signup() {
   const registerWithEmailAndPassword = async () => {
     try {
 
-        if(!email && password.length < 6){
       const res = await auth.createUserWithEmailAndPassword(email, password);
       const user = res.user;
       const idTokenResult = await user.getIdTokenResult();
@@ -82,13 +81,9 @@ function Signup() {
       console.log("hello", user);
       alert("successfully Register");
       history.push("/");
-    }
-    else{
-        alert("Password must contained atleast 6 character");
-    }
     } catch (err) {
       console.error(err);
-      alert("Register Failed");
+      // alert("Register Failed");
     }
   };
   return (
@@ -104,7 +99,7 @@ function Signup() {
               <span className="register">Register</span>
               <div class="underline-title1"></div>
             </div>
-            <form  class="form">
+            <form class="form">
               <label for="user-email" style={{ paddingTop: "13px" }}>
                 &nbsp;Email
               </label>
@@ -126,7 +121,7 @@ function Signup() {
                 <input
                   id="user-email1"
                   className="form-content"
-                  name="email"
+                  name="password"
                   value={password}
                   onChange={(e) => setpassword(e.target.value)}
                   autoFocus
@@ -153,7 +148,7 @@ function Signup() {
                 block
                 shape="round"
                 icon={<SendOutlined />}
-                
+
                 size="large"
               >
                 &nbsp;Register

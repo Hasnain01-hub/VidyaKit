@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -133,18 +134,18 @@ export default function VueQuiz() {
             You scored {score} out of {questions.length}
           </div>
           <div className='score'>
-          {score > 3 ? (
-                <a
-                  href='https://certificate-vue.omjadhav3714.repl.co/'
-                  className='bt'
-                >
-                  <button className='btn btn-main'>Get Certificate</button>
-                </a>
-              ) : (
-                <h3>
-                  Try Again! You need to score alteast 3 to get the certificate
-                </h3>
-              )}
+            {score > 3 ? (
+              <a target="_blank"
+                href='https://certificate-vue.omjadhav3714.repl.co/'
+                className='bt'
+              >
+                <button className='btn btn-main'>Get Certificate</button>
+              </a>
+            ) : (
+              <h3>
+                Try Again! You need to score alteast 3 to get the certificate
+              </h3>
+            )}
           </div>
         </div>
       ) : (
